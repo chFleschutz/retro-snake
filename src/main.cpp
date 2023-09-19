@@ -37,7 +37,7 @@ int main()
     string highscore = "0";           //speichert den highscore aus scoreboard.txt
 
     //Random-Generator initialisieren
-    srand(time(NULL));
+    srand(static_cast<unsigned int>(time(NULL)));
 
     //****************
     //Programmschleife
@@ -210,7 +210,7 @@ int main()
 
             //Neue Positionen der Objekte in Screen speichern und ausgeben
             //Essen 
-            for (size_t i = 0; i < maxFood; i++)
+            for (int i = 0; i < maxFood; i++)
             {
                 if (food[i] != nullptr)
                 {
@@ -220,7 +220,7 @@ int main()
             //Kopf
             Screen.set(charSnake, head.getPosX(), head.getPosY());
             //Körper 
-            for (size_t i = 0; i < maxBodys; i++)
+            for (int i = 0; i < maxBodys; i++)
             {
                 //Prüfen ob ein Körperteil and stelle i existiert
                 if (head.hasBody(i))
